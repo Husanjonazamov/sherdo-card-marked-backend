@@ -1,3 +1,1 @@
-MODULES = [
-    "core.apps.shared",
-]
+MODULES = ["core.apps.shared", "core.apps.api"]
