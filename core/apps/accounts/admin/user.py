@@ -11,27 +11,13 @@ class CustomUserAdmin(admin.UserAdmin, ModelAdmin):
     form = UserChangeForm
     list_display = (
         "first_name",
-        "last_name",
+        "login",
         "phone",
         "role",
     )
     autocomplete_fields = ["groups", "user_permissions"]
     fieldsets = ((None, {"fields": ("phone",)}),) + (
-        (None, {"fields": ("username", "password")}),
-        (_("Personal info"), {"fields": ("first_name", "last_name", "email")}),
-        (
-            _("Permissions"),
-            {
-                "fields": (
-                    "is_active",
-                    "is_staff",
-                    "is_superuser",
-                    "groups",
-                    "user_permissions",
-                    "role",
-                ),
-            },
-        ),
+        (_("Personal info"), {"fields": ("first_name", "login")}),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
 

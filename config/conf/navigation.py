@@ -13,18 +13,13 @@ PAGES = [
         ],
     },
     {
-        "title": _("Auth"),
-        "separator": True,  # Top border
+        "title": _("Foydalanuvchilar"),
+        "separator": True, 
         "items": [
             {
-                "title": _("Users"),
+                "title": _("Foydalanuvchilar"),
                 "icon": "group",
-                "link": reverse_lazy("admin:http_user_changelist"),
-            },
-            {
-                "title": _("Group"),
-                "icon": "group",
-                "link": reverse_lazy("admin:auth_group_changelist"),
+                "link": reverse_lazy("admin:accounts_user_changelist"),
             },
         ],
     },
