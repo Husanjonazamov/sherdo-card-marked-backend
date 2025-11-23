@@ -14,7 +14,6 @@ APPS = [
     "rest_framework_simplejwt",
     "django_core",
     "core.apps.accounts.apps.AccountsConfig",
-    "core.apps.api"
 ]
 
 if env.bool("SILK_ENABLED", False):

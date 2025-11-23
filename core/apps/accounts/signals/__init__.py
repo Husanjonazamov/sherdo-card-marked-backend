@@ -1,1 +1,2 @@
-from .user import * # noqa
+from .profile import *  # noqa
+from .user import *  # noqa
