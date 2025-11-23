@@ -11,13 +11,12 @@ class CustomUserAdmin(admin.UserAdmin, ModelAdmin):
     form = UserChangeForm
     list_display = (
         "first_name",
-        "login",
+        "last_name",
         "phone",
         "role",
     )
     autocomplete_fields = ["groups", "user_permissions"]
     fieldsets = ((None, {"fields": ("phone",)}),) + (
-        (_("Personal info"), {"fields": ("first_name", "login")}),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
 

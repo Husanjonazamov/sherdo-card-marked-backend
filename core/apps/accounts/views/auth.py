@@ -53,14 +53,11 @@ class RegisterView(BaseViewSetMixin, GenericViewSet, UserService):
         ser.is_valid(raise_exception=True)
         data = ser.data
         phone = data.get("phone")
-        self.create_user(phone, data.get("first_name"), data.get("login"), data.get("password"))
-        token = self.validate_user(get_user_model().objects.filter(phone=phone).first())
         
+        self.create_user(phone, data.get("first_name"), data.get("last_name"), data.get("password"))
+        token = self.validate_user(get_user_model().objects.filter(phone=phone).first())
         return Response(
-            {
-                "detail": _("Foydalanuvchi yaratildi"),
-                "token": token,
-            },
+            {"detail": _("Foydalanuvchi muvaffaqiyatli ro'yxatdan o'tdi."), "token": token},
             status=status.HTTP_202_ACCEPTED,
         )
 
@@ -82,9 +79,9 @@ class RegisterView(BaseViewSetMixin, GenericViewSet, UserService):
                     status=status.HTTP_202_ACCEPTED,
                 )
         except exceptions.SmsException as e:
-            raise PermissionDenied(e)  # Response exception for APIException
+            raise PermissionDenied(e)
         except Exception as e:
-            raise PermissionDenied(e)  # Api exception for APIException
+            raise PermissionDenied(e)  
 
     @action(methods=["POST"], detail=False, url_path="resend")
     def resend(self, rq: Type[request.Request]):
