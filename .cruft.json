@@ -1,0 +1,28 @@
+{
+  "template": "https://github.com/JscorpTech/django",
+  "commit": "38afe9dd67ae4b080fcc6e5da47b494c448214b6",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "cacheops": true,
+      "silk": false,
+      "storage": false,
+      "channels": false,
+      "ckeditor": true,
+      "modeltranslation": true,
+      "parler": false,
+      "rosetta": false,
+      "project_name": "card",
+      "settings_module": "config.settings.local",
+      "runner": "wsgi",
+      "script": "entrypoint.sh",
+      "key": "django-insecure-change-this-in-production",
+      "port": "8081",
+      "phone": "998000000000",
+      "password": "admin123",
+      "max_line_length": "120",
+      "project_slug": "card"
+    }
+  },
+  "directory": null
+}
